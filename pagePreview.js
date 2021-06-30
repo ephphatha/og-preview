@@ -5,7 +5,7 @@ function displayPreview(event) {
     const previewPopup = document.createElement('div');
     previewPopup.id = 'e-og-overlay';
     previewPopup.classList.add('bbc-block');
-    previewPopup.style = `position: absolute; left: ${leftPosition}px`;
+    previewPopup.style = `position: absolute; max-width: 50%; left: ${leftPosition}px`;
     previewPopup.addEventListener('click', () => previewPopup.remove());
 
     if (response.properties.title) {

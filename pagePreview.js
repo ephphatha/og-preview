@@ -2,7 +2,6 @@ function displayPreview(event) {
   const leftPosition = event.currentTarget.getBoundingClientRect().left;
 
   chrome.runtime.sendMessage({url: event.currentTarget.nextSibling.href, id: event.currentTarget.id}, (response) => {
-    console.log(response);
     const previewPopup = document.createElement('div');
     previewPopup.id = 'e-og-overlay';
     previewPopup.classList.add('bbc-block');

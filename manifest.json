@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "OpenGraphPreview",
+  "version": "0.1",
+  "description": "Preview links in posts on the Something Awful forums using available OpenGraph metadata",
+  "author": "ephphatha",
+  "content_scripts": [{
+    "matches": ["https://forums.somethingawful.com/showthread.php*"],
+    "js": ["pagePreview.js"],
+    "run_at": "document_idle"
+  }],
+  "background": {
+    "service_worker": "fetchParse.js"
+  },
+  "homepage_url": "https://github.com/ephphatha/og-preview",
+  "minimum_chrome_version": "88",
+  "short_name": "OGPreview",
+  "permissions": [
+  ],
+  "host_permissions": [
+    "https://*/"
+  ]
+}

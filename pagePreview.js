@@ -41,11 +41,13 @@ function displayPreview(event) {
 function doInit() {
   let buttonId = 0;
   for (const postBodyLink of document.querySelectorAll('.postbody > a')) {
-    const showPreviewButton = document.createElement('button');
-    showPreviewButton.id = `e-og-${buttonId++}`;
-    showPreviewButton.innerText = 'OG';
-    showPreviewButton.addEventListener('click', displayPreview);
-    postBodyLink.before(showPreviewButton);
+    if (postBodyLink.protocol === 'https:') {
+      const showPreviewButton = document.createElement('button');
+      showPreviewButton.id = `e-og-${buttonId++}`;
+      showPreviewButton.innerText = 'OG';
+      showPreviewButton.addEventListener('click', displayPreview);
+      postBodyLink.before(showPreviewButton);
+    }
   }
 }
 

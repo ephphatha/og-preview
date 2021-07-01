@@ -9,6 +9,9 @@
     "js": ["pagePreview.js"],
     "run_at": "document_idle"
   }],
+  "icons": {
+    "128": "icon128.png"
+  },
   "background": {
     "service_worker": "fetchParse.js"
   },

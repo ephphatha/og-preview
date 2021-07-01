@@ -6,7 +6,7 @@ chrome.runtime.onMessage.addListener(
       const ogProperties = {};
 
       const metaRegex = /<meta\s*(?:(?:\b[\w|-]+\b\s*(?:=\s*(?:"[^"]*"|'[^']*'|[^"'<> ]+)\s*)?)*)\/?\s*>/ig;
-      const attributeRegex = /(\b[\w|-]+\b)\s*=\s*(?:"([^"]*)"|'([^']*)'+|([^"'<> ]+)\s*)+/ig;
+      const attributeRegex = /(\b[\w|-]+\b)\s*=\s*(?:"([^"]*)"|'([^']*)'+|([^"'<> ]+)\s*)/g;
 
       let matchedMetaTag;
       while (matchedMetaTag = metaRegex.exec(html)) {
